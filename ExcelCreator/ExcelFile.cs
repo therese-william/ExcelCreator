@@ -179,6 +179,12 @@ namespace ExcelCreator
                                 {
                                     multiSelectCols.Add(ColumnNumber);
                                 }
+
+                                if (c.ColumnWidth > 0)
+                                {
+                                    Excel.Range r = xlWorkSheet.get_Range(ColumnChar + ":" + ColumnChar, Type.Missing);
+                                    r.EntireColumn.ColumnWidth = c.ColumnWidth;
+                                }
                             }
                             ColumnNumber++;
                         }

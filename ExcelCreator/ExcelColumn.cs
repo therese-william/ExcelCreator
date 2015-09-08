@@ -41,5 +41,13 @@ namespace ExcelCreator
             set { columnOptions = value; }
         }
 
+        int columnWidth;
+
+        public int ColumnWidth
+        {
+            get { return columnWidth; }
+            set { columnWidth = value; }
+        }
+
     }
 }

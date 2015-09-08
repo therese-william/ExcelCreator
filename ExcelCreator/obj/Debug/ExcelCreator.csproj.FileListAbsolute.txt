@@ -5,4 +5,3 @@
 \\amiserver2\usershares\therese\my documents\visual studio 2013\Projects\ExcelCreator\ExcelCreator\bin\Debug\ExcelCreator.pdb
 \\amiserver2\usershares\therese\my documents\visual studio 2013\Projects\ExcelCreator\ExcelCreator\obj\Debug\ExcelCreator.dll
 \\amiserver2\usershares\therese\my documents\visual studio 2013\Projects\ExcelCreator\ExcelCreator\obj\Debug\ExcelCreator.pdb
-\\amiserver2\usershares\therese\my documents\visual studio 2013\Projects\ExcelCreator\ExcelCreator\obj\Debug\ExcelCreator.csprojResolveAssemblyReference.cache
