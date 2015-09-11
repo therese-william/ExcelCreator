@@ -6,11 +6,21 @@ using System.Text;
 
 namespace ExcelCreator
 {
+    /// <summary>
+    /// EmptyExcelException is raised when excel sheet have no sheets
+    /// </summary>
     public class EmptyExcelException : Exception
     {
+        /// <summary>
+        /// EmptyExcelException fired when excel sheet have no sheets
+        /// </summary>
         public EmptyExcelException()
         : base() { }
-    
+
+        /// <summary>
+        /// EmptyExcelException fired when excel sheet have no sheets
+        /// </summary>
+        /// <param name="message">message appear to user</param>
         public EmptyExcelException(string message)
             : base(message) { }
     
@@ -26,7 +36,9 @@ namespace ExcelCreator
         protected EmptyExcelException(SerializationInfo info, StreamingContext context)
             : base(info, context) { }
     }
-
+    /// <summary>
+    /// InvalidSheetException is raised when there is something invalid in the sheet. i.e. number of values in supplied rows don't match number of columns
+    /// </summary>
     public class InvalidSheetException : Exception
     {
         public InvalidSheetException()

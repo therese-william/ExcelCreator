@@ -58,13 +58,14 @@ namespace ExcelCreator
         /// <param name="ColumnName">Column Name</param>
         /// <param name="ColumnType">Column Type is Text, DropDown or MultiSelect</param>
         /// <param name="ColumnOptions">If column is DropDown or MultiSelect then Column Options should be supplied as a list of strings</param>
-        public void AddColumn(string ColumnName, ExcelColumn.ColumnTypes ColumnType, List<string> ColumnOptions, int ColumnWidth)
+        public void AddColumn(string ColumnName, ExcelColumn.ColumnTypes ColumnType, List<string> ColumnOptions, int ColumnWidth,bool WrapText)
         {
             ExcelColumn col = new ExcelColumn();
             col.ColumnName = ColumnName;
             col.ColumnOptions = ColumnOptions;
             col.ColumnType = ColumnType;
             col.ColumnWidth = ColumnWidth;
+            col.WrapText = WrapText;
             if (columns == null)
             {
                 columns = new List<ExcelColumn>();

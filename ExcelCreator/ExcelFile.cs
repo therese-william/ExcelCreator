@@ -179,12 +179,15 @@ namespace ExcelCreator
                                 {
                                     multiSelectCols.Add(ColumnNumber);
                                 }
+                            }
 
-                                if (c.ColumnWidth > 0)
-                                {
-                                    Excel.Range r = xlWorkSheet.get_Range(ColumnChar + ":" + ColumnChar, Type.Missing);
-                                    r.EntireColumn.ColumnWidth = c.ColumnWidth;
-                                }
+                            if (c.ColumnWidth > 0)
+                            {
+                                xlWorkSheet.Columns[ColumnNumber].ColumnWidth = c.ColumnWidth;
+                            }
+                            if (c.WrapText)
+                            {
+                                xlWorkSheet.Columns[ColumnNumber].WrapText = true;
                             }
                             ColumnNumber++;
                         }
@@ -225,7 +228,7 @@ namespace ExcelCreator
                 }
 
                 //save the workbook to "C:\workbook.xlsm";
-                fullPath = ConfigurationManager.AppSettings["StoreDirectory"] + fileName + ".xlsm";
+                fullPath = Properties.Settings.Default.FileDirectory + fileName + ".xlsm";
                 if (File.Exists(fullPath))
                 {
                     File.Delete(fullPath);

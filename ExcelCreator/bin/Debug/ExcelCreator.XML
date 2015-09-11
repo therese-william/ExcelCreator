@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ExcelCreator</name>
+    </assembly>
+    <members>
+        <member name="T:ExcelCreator.ExcelColumn">
+            <summary>
+            Define column for excel sheet
+            </summary>
+        </member>
+        <member name="P:ExcelCreator.ExcelColumn.ColumnName">
+            <summary>
+            Name of the column
+            </summary>
+        </member>
+        <member name="P:ExcelCreator.ExcelColumn.ColumnType">
+            <summary>
+            Column type is Text, DropDown or MultiSelect
+            </summary>
+        </member>
+        <member name="P:ExcelCreator.ExcelColumn.ColumnOptions">
+            <summary>
+            If column is DropDown or MultiSelect then Column Options should be supplied as a list of strings
+            </summary>
+        </member>
+        <member name="P:ExcelCreator.ExcelColumn.ColumnWidth">
+            <summary>
+            Width of the column
+            </summary>
+        </member>
+        <member name="T:ExcelCreator.ExcelColumn.ColumnTypes">
+            <summary>
+            Column Types used to specify if this column is just text or drop down list or multi select
+            </summary>
+        </member>
+        <member name="F:ExcelCreator.ExcelColumn.ColumnTypes.Text">
+            <summary>
+            Text column, user can add any text to it
+            </summary>
+        </member>
+        <member name="F:ExcelCreator.ExcelColumn.ColumnTypes.DropDown">
+            <summary>
+            Drop down column user should choose only one value from the set of values defined in ColumnOptions field
+            </summary>
+        </member>
+        <member name="F:ExcelCreator.ExcelColumn.ColumnTypes.MultiSelect">
+            <summary>
+            Multi select column user should choose many values from the set of values defined in ColumnOptions field
+            </summary>
+        </member>
+        <member name="T:ExcelCreator.EmptyExcelException">
+            <summary>
+            EmptyExcelException is raised when excel sheet have no sheets
+            </summary>
+        </member>
+        <member name="M:ExcelCreator.EmptyExcelException.#ctor">
+            <summary>
+            EmptyExcelException fired when excel sheet have no sheets
+            </summary>
+        </member>
+        <member name="M:ExcelCreator.EmptyExcelException.#ctor(System.String)">
+            <summary>
+            EmptyExcelException fired when excel sheet have no sheets
+            </summary>
+            <param name="message">message appear to user</param>
+        </member>
+        <member name="T:ExcelCreator.InvalidSheetException">
+            <summary>
+            InvalidSheetException is raised when there is something invalid in the sheet. i.e. number of values in supplied rows don't match number of columns
+            </summary>
+        </member>
+        <member name="T:ExcelCreator.ExcelFile">
+            <summary>
+            Excel File
+            </summary>
+        </member>
+        <member name="M:ExcelCreator.ExcelFile.encloseCellWithBorder(Microsoft.Office.Interop.Excel.Worksheet,System.String,System.String)">
+            <summary>
+            Sets border of cells from beginCell to endCell to a single-line width border all around.
+            </summary>
+            <param name="ws">The worksheet to modify cells in</param>
+            <param name="beginCell">The cell to begin the border change at, e.g. "A1"</param>
+            <param name="endCell">The cell to end the border change at, e.g. "C2"</param>
+        </member>
+        <member name="M:ExcelCreator.ExcelFile.setInterior(Microsoft.Office.Interop.Excel.Worksheet,System.String,System.String,System.Drawing.Color)">
+            <summary>
+            Sets color of cells from beginCell to endCell to the specified color.
+            </summary>
+            <param name="ws">The worksheet to modify cells in</param>
+            <param name="beginCell">The cell to begin the color change at, e.g. "A1"</param>
+            <param name="endCell">The cell to end the color change at, e.g. "C2"</param>
+            <param name="color">The System.Drawing.Color color to give the cell interior</param>
+        </member>
+        <member name="M:ExcelCreator.ExcelFile.SaveToExcelFile">
+            <summary>
+            Save Excel to file
+            </summary>
+            <returns>Full path of created excel file</returns>
+        </member>
+        <member name="P:ExcelCreator.ExcelFile.FileName">
+            <summary>
+            File name as it will be saved
+            </summary>
+        </member>
+        <member name="P:ExcelCreator.ExcelFile.Sheets">
+            <summary>
+            Sheets included in excel file
+            </summary>
+        </member>
+        <member name="T:ExcelCreator.ExcelSheet">
+            <summary>
+            Define Excel file sheet
+            </summary>
+        </member>
+        <member name="M:ExcelCreator.ExcelSheet.AddColumn(ExcelCreator.ExcelColumn)">
+            <summary>
+            Add column to sheet by providing a column of type ExcelColumn
+            </summary>
+            <param name="col">Column to be added to the sheet</param>
+        </member>
+        <member name="M:ExcelCreator.ExcelSheet.AddColumn(System.String,ExcelCreator.ExcelColumn.ColumnTypes,System.Collections.Generic.List{System.String},System.Int32,System.Boolean)">
+            <summary>
+            Add column to sheet by providing the column details.
+            </summary>
+            <param name="ColumnName">Column Name</param>
+            <param name="ColumnType">Column Type is Text, DropDown or MultiSelect</param>
+            <param name="ColumnOptions">If column is DropDown or MultiSelect then Column Options should be supplied as a list of strings</param>
+        </member>
+        <member name="M:ExcelCreator.ExcelSheet.AddRow(System.Collections.Generic.List{System.String})">
+            <summary>
+            Add row to sheet, given that the number of submitted values should be the same as added columns, so for empty columns you can just add empty string
+            </summary>
+            <param name="Values">List of values as strings</param>
+        </member>
+        <member name="P:ExcelCreator.ExcelSheet.SheetName">
+            <summary>
+            Set or Get the name of the sheet as it will appear in the excel file
+            </summary>
+        </member>
+        <member name="P:ExcelCreator.ExcelSheet.Columns">
+            <summary>
+            Set or Get the columns of this sheet
+            </summary>
+        </member>
+        <member name="P:ExcelCreator.ExcelSheet.Rows">
+            <summary>
+            Get the rows included in this sheet
+            </summary>
+        </member>
+    </members>
+</doc>
